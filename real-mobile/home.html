@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real Software Mobile Application</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/angular.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/controller.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    
+
+    <style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+</style>
+
+</head>
+<body>
+<div class="container">
+	<div class="jumbotron">
+		<h1>Real Software, Bhavani</h1>
+		</div>
+</div>
+	<h3>Customers List</h3>
+    <div ng-app="myApp" ng-controller="myController">
+        <table wt-responsive-table>
+            <tr>
+                <th>ID</th>
+                    <th>Customer Name</th>
+                        <th>Address</th>
+                            <th>Contact No</th>
+            </tr>
+            <tr ng-repeat="customer in cusArray | orderBy : 'values.id'">
+
+                <td>{{customer.id}}</td>
+                    <td>{{customer.values.name}}</td>
+                        <td>{{customer.values.address }}</td>
+                            <td>{{customer.values.contactNo}}</td>
+            </tr>
+        </table>
+    </div>
+	
+	<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Copyrights @ <a href="http://www.realsoftwareindia.com">Real Software</a></p> 
+</footer>
+	
+</body>
+</html>
